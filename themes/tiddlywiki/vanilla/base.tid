@@ -176,6 +176,10 @@ dl dt {
 	margin-top: 6px;
 }
 
+button, textarea, input, select {
+	outline-color: <<colour primary>>;
+}
+
 textarea,
 input[type=text],
 input[type=search],
@@ -382,6 +386,21 @@ a.tc-tiddlylink-external:hover {
 
 .tc-draggable {
 	cursor: move;
+}
+
+.tc-sidebar-tab-open .tc-droppable-placeholder, .tc-tagged-draggable-list .tc-droppable-placeholder,
+.tc-links-draggable-list .tc-droppable-placeholder {
+	line-height: 2em;
+	height: 2em;
+}
+
+.tc-sidebar-tab-open-item {
+	position: relative;
+}
+
+.tc-sidebar-tab-open .tc-btn-invisible.tc-btn-mini svg {
+	font-size: 0.7em;
+	fill: <<colour muted-foreground>>;
 }
 
 /*
@@ -640,7 +659,6 @@ button.tc-untagged-label {
 .tc-tag-label svg, .tc-tag-label img {
 	height: 1em;
 	width: 1em;
-	fill: <<colour tag-foreground>>;
 	vertical-align: text-bottom;
 }
 
@@ -650,6 +668,10 @@ button.tc-untagged-label {
 
 .tc-tag-manager-tag {
 	width: 100%;
+}
+
+button.tc-btn-invisible.tc-remove-tag-button {
+	outline: none;
 }
 
 /*
@@ -1116,6 +1138,7 @@ html body.tc-body.tc-single-tiddler-window {
 .tc-editor-toolbar button:hover {
 	background-color: <<colour tiddler-controls-foreground-selected>>;
 	fill: <<colour background>>;
+	color: <<colour background>>;
 }
 
 .tc-editor-toolbar .tc-text-editor-toolbar-more {
@@ -1979,6 +2002,43 @@ html body.tc-body.tc-single-tiddler-window {
 .tc-static-alert-inner {
 	padding: 0 2px 2px 42px;
 	color: <<colour static-alert-foreground>>;
+}
+
+/*
+** Floating drafts list
+*/
+
+.tc-drafts-list {
+	z-index: 2000;
+	position: fixed;
+	font-size: 0.8em;
+	left: 0;
+	bottom: 0;
+}
+
+.tc-drafts-list a {
+	margin: 0 0.5em;
+	padding: 4px 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid <<colour background>>;
+	border-bottom-none;
+	background: <<colour dirty-indicator>>;
+	color: <<colour background>>;
+	fill: <<colour background>>;
+}
+
+.tc-drafts-list a:hover {
+	text-decoration: none;
+	background: <<colour foreground>>;
+	color: <<colour background>>;
+	fill: <<colour background>>;
+}
+
+.tc-drafts-list a svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
 }
 
 /*

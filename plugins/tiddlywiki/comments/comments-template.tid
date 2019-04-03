@@ -2,7 +2,7 @@ title: $:/plugins/tiddlywiki/comments/comments-template
 
 <div class="tc-comments">
 <ol class="tc-comment-list">
-<$list filter="[all[tiddlers+shadows]comment-target<currentTiddler>sort[created]!has[draft.of]]">
+<$list filter="[all[tiddlers+shadows]role[comment]contains<currentTiddler>sort[created]!has[draft.of]]">
 <li>
 <div class="tc-comment-entry">
 <div class="tc-comment-entry-heading">
@@ -13,7 +13,7 @@ title: $:/plugins/tiddlywiki/comments/comments-template
 </div>
 <div class="tc-comment-entry-body">
 <$reveal type="match" state="!!edit-mode" text="yes">
-<$edit-text tiddler=<<currentTiddler>> tag="textarea"/>
+<$edit-text tiddler=<<currentTiddler>> tag="textarea" focus="true"/>
 </$reveal>
 <$reveal type="nomatch" state="!!edit-mode" text="yes">
 <$transclude tiddler=<<currentTiddler>> mode="block"/>
